@@ -11,6 +11,8 @@ h_part = re.compile(r"^h[aeiouy][a-z]{2,4}$")
 g_words = [word for word in dictionary if re.match(g_part, word)]
 h_words = [word for word in dictionary if re.match(h_part, word)]
 
-rand = lambda arr: arr[randint(0, len(arr)-1)].strip()
+rand_word = lambda arr: arr[randint(0, len(arr)-1)].strip()
 
-print("{g}{h}".format(g=rand(g_words), h=rand(h_words)))
+name = "{g}{h}".format(g=rand_word(g_words), h=rand_word(h_words)).title()
+
+print(name)
